@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Endrédy Gábor – színész, műsorvezető</title>
+<meta name="description" content="Endrédy Gábor színész és műsorvezető. Műsorvezetés, narráció, rendezvények moderálása, reklámfilmek, hangoskönyvek.">
+<meta property="og:title" content="Endrédy Gábor – színész, műsorvezető">
+<meta property="og:description" content="Műsorvezetés, narráció, rendezvények moderálása, reklámfilmek, hangoskönyvek.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    color-scheme: dark;
+    --bg:#31646c; --bg2:#285057; --text:#f4f8f8; --muted:#d2e2e3;
+    --accent:#c2d8ec; --line:#4b7d85; --line2:#82a9b0; --radius:4px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:84px}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height:1.65; font-size:17px;
+  }
+  a{color:var(--accent)}
+  [hidden]{display:none !important}
+  .wrap{max-width:980px; margin:0 auto; padding:0 20px}
+  .wrap.wide{max-width:1240px}
+
+  /* ---------- Menü ---------- */
+  header.top{
+    position:sticky; top:0; z-index:10; background:rgba(49,100,108,.95);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  header.top .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px 24px; padding-top:12px; padding-bottom:12px}
+  .brand{font-weight:800; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; color:var(--text); font-size:16px}
+  nav{display:flex; gap:4px 22px; align-items:center}
+  nav a{font-size:14.5px; letter-spacing:.02em; color:var(--muted); text-decoration:none; padding:4px 0}
+  nav a:hover{color:var(--text)}
+  .menu-btn{
+    display:none; background:none; color:var(--text); border:1px solid var(--line); border-radius:var(--radius);
+    padding:6px 14px; font:inherit; font-size:15px; cursor:pointer;
+  }
+  @media (max-width:1060px){
+    .menu-btn{display:inline-block}
+    nav{display:none; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px}
+    header.top.open nav{display:flex}
+    nav a{font-size:16px; padding:12px 2px; border-top:1px solid var(--line)}
+  }
+
+  /* ---------- Kezdőlap ---------- */
+  .hero{padding-top:96px; padding-bottom:84px}
+  .eyebrow{display:flex; align-items:center; gap:14px; margin:0 0 30px; color:var(--accent); font-size:16px; letter-spacing:.2em; text-transform:uppercase; font-weight:600}
+  .eyebrow::before{content:""; width:32px; height:2px; background:var(--accent)}
+  h1{font-size:clamp(34px, 8vw, 84px); line-height:1.02; margin:0 0 .22em; font-weight:800; text-transform:uppercase; letter-spacing:.01em}
+  .tagline{font-size:clamp(20px, 2.6vw, 26px); line-height:1.3; font-weight:600; max-width:760px; margin:0 0 18px}
+  .lead{font-size:clamp(17px, 2.2vw, 20px); color:var(--muted); max-width:720px; margin:0 0 32px}
+  .btn{
+    display:inline-block; padding:13px 26px; border-radius:var(--radius); background:var(--accent); color:#14262a;
+    text-decoration:none; font-weight:700; font-size:15px; letter-spacing:.04em; text-transform:uppercase;
+  }
+  .btn.ghost{background:none; color:var(--text); border:1px solid var(--line2); margin-left:8px}
+  .btn:hover{filter:brightness(1.1)}
+  .hero-grid{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:56px; align-items:center}
+  .hero-grid.solo{grid-template-columns:minmax(0,1fr)}
+  .portrait{margin:0; position:relative; z-index:0}
+  .portrait::after{content:""; position:absolute; inset:14px -14px -14px 14px; border:2px solid var(--accent); border-radius:var(--radius); z-index:-1}
+  .portrait img{display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 16%; border-radius:var(--radius); background:var(--bg2)}
+  @media (max-width:860px){ .hero-grid{grid-template-columns:minmax(0,1fr); gap:44px} .portrait{max-width:300px} }
+  @media (max-width:560px){ .hero{padding-top:60px; padding-bottom:56px} .btn.ghost{margin:10px 0 0} .eyebrow{font-size:13px; letter-spacing:.14em; gap:10px} .eyebrow::before{width:22px} }
+
+  /* ---------- Szekciók ---------- */
+  section{padding:68px 0; border-top:1px solid var(--line)}
+  h2{font-size:clamp(26px, 4vw, 38px); line-height:1.15; margin:0 0 30px; font-weight:800; text-transform:uppercase; letter-spacing:.02em}
+  h2::after{content:""; display:block; width:48px; height:3px; background:var(--accent); margin-top:14px}
+  .prose p{max-width:720px; margin:0 0 1.1em}
+  .big{font-size:clamp(19px, 2.6vw, 24px); line-height:1.4; max-width:720px}
+  .soon{color:var(--muted); margin:0}
+
+  .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap:16px}
+  .card{background:var(--bg2); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:var(--radius); padding:20px 22px}
+  .card h3{margin:0 0 6px; font-size:18px}
+  .card p{margin:0; color:var(--muted); font-size:15.5px}
+  .note{margin:22px 0 0; color:var(--muted); max-width:720px}
+
+  .tl{list-style:none; margin:0; padding:0; border-top:1px solid var(--line)}
+  .tl > li{display:grid; grid-template-columns:210px 1fr; gap:6px 28px; padding:22px 0; border-bottom:1px solid var(--line)}
+  .tl .when{color:var(--accent); font-size:14px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; padding-top:3px}
+  .tl h3{margin:0 0 4px; font-size:19px}
+  .tl p{margin:0; color:var(--muted)}
+  .tl .sum{color:var(--text); font-size:18px}
+  .works{list-style:none; margin:12px 0 0; padding:0; display:grid; gap:6px}
+  .works li{color:var(--muted); font-size:16px; padding-left:16px; position:relative}
+  .works li::before{content:""; position:absolute; left:0; top:.72em; width:7px; height:2px; background:var(--accent)}
+  .works strong{color:var(--text); font-weight:600}
+  @media (max-width:600px){ .tl > li{grid-template-columns:1fr} }
+
+  .refs{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px}
+  .ref h3{margin:12px 0 4px; font-size:18px}
+  .ref p{margin:0; color:var(--muted); font-size:15.5px}
+  .frame{position:relative; aspect-ratio:16/9; border-radius:var(--radius); overflow:hidden; background:var(--bg2); border:1px solid var(--line)}
+  .frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
+  .quotes{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px}
+  blockquote{margin:0; background:var(--bg2); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:var(--radius); padding:22px}
+  blockquote p{margin:0 0 12px; font-size:17px}
+  blockquote footer{color:var(--accent); font-size:14px; letter-spacing:.06em; text-transform:uppercase; font-weight:600}
+
+  .gallery{display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px; margin-top:34px}
+  .gallery figure{margin:0; aspect-ratio:4/5; border-radius:var(--radius); overflow:hidden; background:var(--bg2); border:1px solid var(--line)}
+  .gallery img{width:100%; height:100%; object-fit:cover; display:block}
+
+  .contact-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; max-width:720px}
+  .ccard{background:var(--bg2); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:var(--radius); padding:20px 22px}
+  .ccard span{display:block; color:var(--muted); font-size:13px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px}
+  .ccard a{font-size:20px; font-weight:600; text-decoration:none; color:var(--text); word-break:break-all}
+  .ccard a:hover{color:var(--accent)}
+  .social{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+  .social a{border:1px solid var(--line2); border-radius:var(--radius); padding:7px 16px; font-size:15px; text-decoration:none; color:var(--text)}
+  .social a:hover{border-color:var(--accent); color:var(--accent)}
+
+  footer.site{padding:30px 0 50px; color:var(--muted); font-size:14px; border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap wide">
+    <a class="brand" href="#top">Endrédy Gábor</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav">Menü</button>
+    <nav id="mainnav" aria-label="Főmenü">
+      <a href="#top">Kezdőlap</a>
+      <a href="#agape">Agapé</a>
+      <a href="#szolgaltatasok">Miben számíthat rám?</a>
+      <a href="#korabbi-munkaim">Korábbi munkáim</a>
+      <a href="#referenciak">Referenciák</a>
+      <a href="#visszajelzesek">Visszajelzések</a>
+      <a href="#rolam">Rólam</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+   <div class="hero-grid" id="heroGrid">
+    <div class="hero-text">
+    <h1>Endrédy Gábor</h1>
+    <div class="eyebrow">Színész · Műsorvezető</div>
+    <p class="tagline">Tíz év színházi tapasztalattal a hátam mögött jelenleg vállalkozóként a műsorvezetés és a narrálás a fő profilom.</p>
+    <p class="lead">Emellett kisebb-nagyobb színészi feladatokat is vállalok. 2026-tól az Agapé című műsor házigazdájaként a képernyőn keresztül is találkozhatnak velem.</p>
+    <a class="btn" href="#szolgaltatasok">Miben számíthat rám?</a>
+    <a class="btn ghost" href="#kapcsolat">Kapcsolat</a>
+    </div>
+    <figure class="portrait" id="portrait"><img src="portre.jpg" alt="Endrédy Gábor portréja" width="800" height="1214"></figure>
+   </div>
+  </div>
+
+  <section id="agape">
+    <div class="wrap">
+      <h2>Agapé</h2>
+      <div class="prose" id="agapeBody"></div>
+    </div>
+  </section>
+
+  <section id="szolgaltatasok">
+    <div class="wrap">
+      <h2>Miben számíthat rám?</h2>
+      <div class="cards">
+        <div class="card"><h3>Narráció</h3><p>Reklámok, hirdetések, szövegek és filmek narrálása.</p></div>
+        <div class="card"><h3>Műsorvezetés és rendezvények moderálása</h3><p>Céges rendezvények, események, családi napok, karácsonyi alkalmak házigazdasága.</p></div>
+        <div class="card"><h3>Reklámfilmek és kampányok</h3><p>Céges reklámfilmekben és kampányokban is szívesen vállalok szerepet, akár belső felhasználásra, akár szélesebb körű felhasználásra.</p></div>
+        <div class="card"><h3>Hangoskönyv</h3><p>Hangoskönyvek felolvasása.</p></div>
+      </div>
+      <p class="note">Nem találja a listán, amire szüksége van? Nyitott vagyok más, a szakmámhoz kapcsolódó feladatokra is, keressen bizalommal.</p>
+    </div>
+  </section>
+
+  <section id="korabbi-munkaim">
+    <div class="wrap">
+      <h2>Korábbi munkáim</h2>
+      <ul class="tl" id="expList"></ul>
+    </div>
+  </section>
+
+  <section id="referenciak">
+    <div class="wrap">
+      <h2>Referenciák</h2>
+      <div class="refs" id="refList"></div>
+    </div>
+  </section>
+
+  <section id="visszajelzesek">
+    <div class="wrap">
+      <h2>Visszajelzések</h2>
+      <div class="quotes" id="quoteList"></div>
+    </div>
+  </section>
+
+  <section id="rolam">
+    <div class="wrap">
+      <h2>Rólam</h2>
+      <div class="prose">
+        <p class="big">Tíz év színészi-színházi szakmai tapasztalattal a hátam mögött új fejezet nyílik az életemben.</p>
+        <p>Egyéni vállalkozóként folytatom a munkámat, amely családbarát időbeosztásával jelenlegi élethelyzetemmel is könnyebben összeegyeztethető.</p>
+        <p>Ennek megfelelően olyan feladatokat vállalok, amelyek ehhez a területhez kapcsolódnak: narrálást, műsorvezetést, céges rendezvények moderálását. Nyitott vagyok céges reklámfilmekre és kampányokra, valamint hangoskönyvekre is, és az itt nem szereplő feladatokra is.</p>
+        <p>2026-tól az Agapé című műsor házigazdájaként is dolgozom.</p>
+        <p>Tíz éven át esküvői vőfélyként is dolgoztam. Esküvőket már nem vállalok, de szívesen vezetek rendezvényeket és céges bulikat, és lebonyolítok csapatépítő tréningeket.</p>
+      </div>
+      <div class="gallery" id="gallery" hidden></div>
+    </div>
+  </section>
+
+  <section id="kapcsolat">
+    <div class="wrap">
+      <h2>Kapcsolat</h2>
+      <div class="contact-grid" id="contactList"></div>
+      <div class="social" id="social"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">© <span id="year"></span> Endrédy Gábor</div>
+</footer>
+
+<script>
+/* ==========================================================
+   ITT SZERKESZD AZ ADATAIDAT – a többihez nem kell nyúlni.
+   Ami üresen marad, az nem jelenik meg az oldalon.
+   ========================================================== */
+const CONFIG = {
+  email: "endgabor@gmail.com",
+  phone: "+36 20 326 5024",
+
+  // Agapé szekció. A "text" mindig megjelenik, a többi csak ha kitöltöd.
+  agape: {
+    text: "2026-tól az Agapé című műsor házigazdája vagyok.",
+    more: "",          // pl. pár mondat a műsorról
+    youtube: "",       // egy részlet YouTube-azonosítója (a linkből: watch?v=ABC123xyz -> "ABC123xyz")
+    link: "",          // pl. a műsor oldala vagy csatornája
+    linkLabel: "Tovább a műsorhoz"
+  },
+
+  // Korábbi munkáim – műfajok szerint. A "summary" mindig megjelenik.
+  // A "items" listába írhatod, hol és mit csináltál (amíg üres, nem jelenik meg), pl.:
+  //   items: [ { where: "Színház neve (évek)", what: "darab, szerep" } ]
+  experience: [
+    { genre: "Műsorvezetés", summary: "2026-tól az Agapé című műsor házigazdája vagyok.", items: [] },
+    { genre: "Narráció", summary: "Reklámok és szövegek narrálása.", items: [] },
+    { genre: "Színház", summary: "Tíz év színházi, színészi tapasztalat.", items: [] },
+    { genre: "Esküvők, vőfélykedés", summary: "Tíz éven át dolgoztam esküvői vőfélyként. Esküvőket már nem vállalok.", items: [] }
+  ],
+
+  // Referenciák: megbízók, munkák, opcionálisan egy YouTube-videóval.
+  // Példa: { title: "Reklám narráció – Cég neve", text: "Rövid leírás", youtube: "ABC123xyz" }
+  references: [],
+
+  // Visszajelzések: CSAK valódi visszajelzést írj ide, a szerző hozzájárulásával.
+  // Példa: { quote: "A visszajelzés szövege.", author: "Név, cég" }
+  testimonials: [],
+
+  // Fotók a "Rólam" részhez: tedd a képeket a "photos" mappába.
+  // Amelyik fájl nem létezik, az nem jelenik meg; ha egy sincs, a galéria eltűnik.
+  photos: [
+    "photos/1.jpg", "photos/2.jpg", "photos/3.jpg",
+    "photos/4.jpg", "photos/5.jpg", "photos/6.jpg"
+  ],
+
+  // Közösségi linkek – amit nem használsz, hagyd üresen ("")
+  social: { youtube: "", facebook: "", instagram: "", linkedin: "" }
+};
+
+/* ==========================================================
+   Megjelenítés (nem kell szerkeszteni)
+   ========================================================== */
+function el(tag, props, ...kids){
+  const n = document.createElement(tag);
+  if (props) Object.entries(props).forEach(([k,v]) => { if (k==="class") n.className=v; else n.setAttribute(k,v); });
+  kids.forEach(k => { if (k) n.append(k); });
+  return n;
+}
+function ytFrame(id, title){
+  return el("div",{class:"frame"}, el("iframe",{
+    src:"https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id),
+    title:title, loading:"lazy", allowfullscreen:"",
+    allow:"accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  }));
+}
+
+// Portré: ha a fájl hiányzik, eltűnik, és a szöveg teljes szélességű marad
+(function(){
+  const fig = document.getElementById("portrait"), grid = document.getElementById("heroGrid"), img = fig.querySelector("img");
+  const drop = () => { fig.remove(); grid.classList.add("solo"); };
+  img.addEventListener("error", drop);
+  if (img.complete && img.naturalWidth === 0) drop();
+})();
+
+// Menü (telefonon)
+const hdr = document.querySelector("header.top"), menuBtn = document.querySelector(".menu-btn");
+function setMenu(open){ hdr.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", String(open)); }
+menuBtn.addEventListener("click", () => setMenu(!hdr.classList.contains("open")));
+document.querySelectorAll("#mainnav a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+// Agapé
+const ag = CONFIG.agape, agBox = document.getElementById("agapeBody");
+agBox.append(el("p",{class:"big"}, ag.text));
+if (ag.more) agBox.append(el("p",null, ag.more));
+if (ag.youtube) agBox.append(ytFrame(ag.youtube, "Agapé"));
+if (ag.link) agBox.append(el("p",null, el("a",{class:"btn",href:ag.link,target:"_blank",rel:"noopener"}, ag.linkLabel || "Tovább")));
+
+// Korábbi munkáim
+const exp = document.getElementById("expList");
+CONFIG.experience.forEach(x => {
+  const right = el("div",null, el("p",{class:"sum"}, x.summary));
+  if (x.items && x.items.length){
+    const ul = el("ul",{class:"works"});
+    x.items.forEach(i => ul.append(el("li",null,
+      i.where ? el("strong",null,i.where) : null,
+      i.where && i.what ? " – " + i.what : (i.what || null)
+    )));
+    right.append(ul);
+  }
+  exp.append(el("li",null, el("div",{class:"when"}, x.genre), right));
+});
+
+// Referenciák
+const refs = document.getElementById("refList");
+CONFIG.references.forEach(r => {
+  refs.append(el("div",{class:"ref"},
+    r.youtube ? ytFrame(r.youtube, r.title) : null,
+    el("h3",null,r.title), r.text ? el("p",null,r.text) : null
+  ));
+});
+if (!refs.children.length) refs.append(el("p",{class:"soon"},"Hamarosan: itt jelennek meg az eddigi munkáim és megbízóim."));
+
+// Visszajelzések
+const qs = document.getElementById("quoteList");
+CONFIG.testimonials.forEach(t => {
+  qs.append(el("blockquote",null, el("p",null,"„"+t.quote+"”"), t.author ? el("footer",null,t.author) : null));
+});
+if (!qs.children.length) qs.append(el("p",{class:"soon"},"Hamarosan: itt jelennek meg a megbízók visszajelzései."));
+
+// Fotók
+const g = document.getElementById("gallery");
+CONFIG.photos.forEach((src,i) => {
+  const fig = el("figure");
+  const img = el("img",{src:src, alt:"Endrédy Gábor – fotó "+(i+1)});
+  img.onerror = () => { fig.remove(); g.hidden = g.children.length === 0; };
+  fig.append(img); g.append(fig);
+});
+g.hidden = g.children.length === 0;
+
+// Kapcsolat
+const cl = document.getElementById("contactList");
+if (CONFIG.email) cl.append(el("div",{class:"ccard"}, el("span",null,"E-mail"), el("a",{href:"mailto:"+CONFIG.email}, CONFIG.email)));
+if (CONFIG.phone) cl.append(el("div",{class:"ccard"}, el("span",null,"Telefon"), el("a",{href:"tel:"+CONFIG.phone.replace(/\s+/g,"")}, CONFIG.phone)));
+
+const names = {youtube:"YouTube", facebook:"Facebook", instagram:"Instagram", linkedin:"LinkedIn"};
+const soc = document.getElementById("social");
+Object.entries(CONFIG.social).forEach(([k,url]) => {
+  if (url) soc.append(el("a",{href:url, target:"_blank", rel:"noopener"}, names[k]||k));
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
